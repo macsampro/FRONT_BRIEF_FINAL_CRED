@@ -1,0 +1,44 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nom du Produit</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Categories</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let produit of produits">
+            <td *ngIf="!editModeMap[produit.id_produit]">{{ produit.nom }}</td>
+            <td *ngIf="editModeMap[produit.id_produit]">
+                <input formControlName="nom" [(ngModel)]="produit.nom" />
+            </td>
+            <td *ngIf="!editModeMap[produit.id_produit]">{{ produit.prix }}</td>
+            <td *ngIf="editModeMap[produit.id_produit]">
+                <input formControlName="prix" [(ngModel)]="produit.prix" />
+            </td>
+            <td *ngIf="!editModeMap[produit.id_produit]">{{ produit.quantite }}</td>
+            <td *ngIf="editModeMap[produit.id_produit]">
+                <input formControlName="quantite" [(ngModel)]="produit.quantite" />
+            </td>
+            <td *ngIf="!editModeMap[produit.id_produit]">{{ produit.categorie.nom }}</td>
+            <td *ngIf="editModeMap[produit.id_produit]">
+                <select formControlName="id_categorie">
+                    <option *ngFor="let categorie of categories" [value]="categorie.id_categorie">{{ categorie.nom }}
+                    </option>
+                </select>
+            </td>
+            <td>
+                <button *ngIf="!editModeMap[produit.id_produit]" (click)="editerProduit(produit)">Éditer</button>
+                <button *ngIf="editModeMap[produit.id_produit]"(click)="enregistrerModification(produit)">Enregistrer</button>
+                <button *ngIf="editModeMap[produit.id_produit]" (click)="annulerModification(produit)">Annuler</button>
+                <button *ngIf="!editModeMap[produit.id_produit]" (click)="supprimerProduit(produit.id_produit)">supprimer</button>
+                <!-- <button routerLink="/new-produit">Ajouter un nouveau produit</button> -->
+            </td>
+
+        </tr>
+        <button (click)="ajouterNouveauProduit()">Ajouter un nouveau produit</button>
+    </tbody>
+
+</table>
