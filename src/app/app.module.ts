@@ -9,9 +9,10 @@ import { MonStockComponent } from './pages/mon-stock/mon-stock.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableauProduitsComponent } from './component/tableau-produits/tableau-produits.component';
 import { NewProduitComponent } from './component/new-produit/new-produit.component';
+import { AddproductComponent } from './pages/addproduct/addproduct.component';
 
 @NgModule({
-  declarations: [AppComponent, ConnexionComponent, MonStockComponent, TableauProduitsComponent, NewProduitComponent,],
+  declarations: [AppComponent, ConnexionComponent, MonStockComponent, TableauProduitsComponent, NewProduitComponent, AddproductComponent,],
   imports: [
     BrowserModule,
     NgbModule,

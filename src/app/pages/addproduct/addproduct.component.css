@@ -1,0 +1,40 @@
+/* Stylisation du formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Style des labels */
+  label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Style des champs de saisie */
+  input,
+  select {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  /* Style du bouton */
+  button {
+    background-color: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Au survol, change la couleur du bouton */
+  button:hover {
+    background-color: #0056b3;
+  }
+  

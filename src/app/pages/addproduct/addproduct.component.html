@@ -1,0 +1,26 @@
+
+    
+
+
+        <form [formGroup]="addProduct">
+           <div> <label for="nom">Nom du produit</label>
+            <input formControlName="nom" id="nom" class="form-control"/></div>
+
+            <div><label for="prix">prix</label>
+            <input formControlName="prix" id="prix" class="form-control"/></div>
+
+            <div><label for="quantite">quantite</label>
+            <input formControlName="quantite" id="quantite" class="form-control"/></div>
+
+
+            <div><label for="categorie">categorie</label>
+            <select formControlName="id_categorie" id="id_categorie" class="form-control">
+                <option *ngFor="let categorie of categories" [value]="categorie.id_categorie">{{ categorie.nom }}
+                </option>
+            </select>
+</div>
+            <button [disabled]="!addProduct" (click)="ajouterNouveauProduit()">Ajouter un nouveau produit</button>
+        </form>
+    
+
+

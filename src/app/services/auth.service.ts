@@ -19,13 +19,13 @@ export class AuthService {
       .pipe(
         tap(response => {
           localStorage.setItem('access_token', response.accessToken);
-          if (response.id_utilisateur && Number.isFinite(response.id_utilisateur)) {
-            localStorage.setItem('id_utilisateur', `${response.id_utilisateur}`);
-            console.log('Id utilisateur stocké:', localStorage.getItem('id_utilisateur'))
-            console.log(typeof response.id_utilisateur)
-          } else {
-            console.error('mauvais id utilisateur');
-          }
+          // if (response.id_utilisateur && Number.isFinite(response.id_utilisateur)) {
+          //   localStorage.setItem('id_utilisateur', `${response.id_utilisateur}`);
+          //   console.log('Id utilisateur stocké:', localStorage.getItem('id_utilisateur'))
+          //   console.log(typeof response.id_utilisateur)
+          // } else {
+          //   console.error('mauvais id utilisateur');
+          // }
         })
       );
   }
