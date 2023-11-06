@@ -13,7 +13,6 @@
         <tr *ngFor="let produit of produits">
             <td *ngIf="!editModeMap[produit.id_produit]">{{ produit.nom }}</td>
             <td *ngIf="editModeMap[produit.id_produit]">
-            <!-- <td *ngIf="editModeMap[produit.id_produit]" placeholder="produit.id_produit.value"> -->
                 <input formControlName="nom" [(ngModel)]="produit.nom" />
             </td>
             <td *ngIf="!editModeMap[produit.id_produit]">{{ produit.prix }}</td>
@@ -33,9 +32,11 @@
             </td>
             <td>
                 <button *ngIf="!editModeMap[produit.id_produit]" (click)="editerProduit(produit)">Éditer</button>
-                <button *ngIf="editModeMap[produit.id_produit]"(click)="enregistrerModification(produit)">Enregistrer</button>
+                <button *ngIf="editModeMap[produit.id_produit]"
+                    (click)="enregistrerModification(produit)">Enregistrer</button>
                 <button *ngIf="editModeMap[produit.id_produit]" (click)="annulerModification(produit)">Annuler</button>
-                <button *ngIf="!editModeMap[produit.id_produit]" (click)="supprimerProduit(produit.id_produit)">supprimer</button>
+                <button *ngIf="!editModeMap[produit.id_produit]"
+                    (click)="supprimerProduit(produit.id_produit)">supprimer</button>
             </td>
 
         </tr>

@@ -1,0 +1,59 @@
+/* Stylisation du tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f7f7f7;
+  }
+  
+  /* Style des en-têtes de colonnes */
+  th {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Style des lignes du tableau */
+  tr {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Style des cellules de données */
+  td {
+    padding: 10px;
+  }
+  
+  /* Style des boutons */
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Au survol, change la couleur du bouton */
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style des boutons d'édition, d'enregistrement et d'annulation */
+  .edit-buttons button {
+    background-color: #4caf50; /* Vert */
+  }
+  
+  .edit-buttons button:hover {
+    background-color: #45a049; /* Vert plus foncé au survol */
+  }
+  
+  .cancel-button button {
+    background-color: #f44336; /* Rouge */
+  }
+  
+  .cancel-button button:hover {
+    background-color: #d32f2f; /* Rouge plus foncé au survol */
+  }
+  

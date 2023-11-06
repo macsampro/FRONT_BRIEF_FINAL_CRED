@@ -45,26 +45,22 @@ export class TableauProduitsComponent implements OnInit {
       prix: new FormControl(null, Validators.required),
       quantite: new FormControl(null, Validators.required),
       id_categorie: new FormControl(null, Validators.required),
-      // categorie:new FormControl(null, Validators.required) , 
+      categorie:new FormControl(null, Validators.required) , 
     })
   }
   //
   editerProduit(produit: Produits) {
-    // Activez le mode édition pour ce produit
     this.editModeMap[produit.id_produit] = true;
   }
 
   enregistrerModification(produit: Produits) {
     this.editModeMap[produit.id_produit] = false;
 
-    // Récupérez les données du formulaire de modification
     const modifiedData = this.formulaireModification.value;
 
-    // Appel de la méthode modifyProduit du service pour mettre à jour la base de données
     this.produitsService
       .modifyProduit(produit.id_produit, modifiedData)
       .subscribe(() => {
-        // metre à jour la liste des produits
         this.produits = this.produits.map((p) => {
           if (p.id_produit === produit.id_produit) {
             return { ...p, ...modifiedData };
@@ -75,13 +71,11 @@ export class TableauProduitsComponent implements OnInit {
   }
 
   annulerModification(produit: Produits) {
-    // Désactivez le mode édition pour ce produit
     this.editModeMap[produit.id_produit] = false;
   }
 
   supprimerProduit(id_Produit: number) {
     this.produitsService.deleteProduits(id_Produit).subscribe(() => {
-      // mettre à jour la liste des produits
       this.produits = this.produits.filter((p) => p.id_produit !== id_Produit);
     });
   }
