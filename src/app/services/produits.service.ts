@@ -45,12 +45,15 @@ export class ProduitsService {
   modifyProduit(
     id: number,
     updateData: Partial<Produits>
-  ): Observable<Partial<Produits>> {
+  ): Observable<Produits> {
+    console.log(updateData)
+    console.log(id)
+    console.log(typeof id)
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + localStorage.getItem('access_token'),
     });
     return this.http.patch<Produits>(
-      `http://localhost:3000/produits/${id}`,
+      `http://localhost:3000/Produits/${id}`,
       updateData,
       { headers: this.getHeaders() }
     );
